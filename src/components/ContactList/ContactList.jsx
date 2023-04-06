@@ -13,12 +13,12 @@ export const ContactList = () => {
   };
 
   const makeList = arrey => {
-    return arrey.map(({ id, name, number }) => {
+    return arrey.map(({ id, name, phone }) => {
       return (
         <ContactListElem
           key={id}
           contactName={name}
-          contactNumber={number}
+          contactNumber={phone}
           contactId={id}
         />
       );
