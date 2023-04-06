@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { addContact } from 'redux/contactsSlice';
+import { addContact } from 'redux/operations';
 import { getContacts } from 'redux/selectors';
 import { Formik } from 'formik';
 import { object, string } from 'yup';
