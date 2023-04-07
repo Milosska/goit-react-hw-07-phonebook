@@ -1,16 +1,9 @@
 import { useSelector } from 'react-redux';
-import { getContacts, getFilter } from 'redux/selectors';
+import { selectFiltredContacts } from 'redux/selectors';
 import { ContactListElem } from '../ContactListElem/ContactListElem';
 
 export const ContactList = () => {
-  const contacts = useSelector(getContacts);
-  const filter = useSelector(getFilter);
-
-  const makeFiltredContacts = () => {
-    return contacts.filter(({ name }) => {
-      return name.toLowerCase().includes(filter.toLowerCase());
-    });
-  };
+  const contacts = useSelector(selectFiltredContacts);
 
   const makeList = arrey => {
     return arrey.map(({ id, name, phone }) => {
@@ -25,5 +18,5 @@ export const ContactList = () => {
     });
   };
 
-  return <ul>{makeList(makeFiltredContacts())}</ul>;
+  return <ul>{makeList(contacts)}</ul>;
 };
